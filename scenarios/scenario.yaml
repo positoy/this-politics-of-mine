@@ -1,0 +1,103 @@
+- id: crossroad-teen
+  type: scenarioNode
+  data:
+    id: crossroad-teen
+    title: "규칙이란 무엇인가?"
+    intro:
+      text: "새벽 2시, 차가 없는 횡단보도 앞. 친구는 무단횡단을 하자고 한다."
+      image_prompt: "empty crosswalk at night, red traffic light, two middle school students waiting, urban street in silence"
+    choices:
+      - id: wait
+        text: "신호가 바뀔 때까지 기다린다"
+        result: "나는 규칙이란 나 자신과의 약속일지도 모른다고 생각했다."
+        nextNodeId: become-president
+      - id: cross
+        text: "그냥 건넌다"
+        result: "나는 법이란 상황에 따라 바뀌어야 한다고 생각했다."
+        nextNodeId: become-president
+- id: become-president
+  type: scenarioNode
+  data:
+    id: become-president
+    title: "대통령이 되다"
+    type: story
+    nextNodeId: first-critical-choice
+    intro:
+      text: |-
+        시간... (truncated for brevity)
+      image_prompt: "ordinary office worker helping elderly woman on bus, viral moment, news cameras, presidential inauguration ceremony"
+    choices: []
+- id: first-critical-choice
+  type: scenarioNode
+  data:
+    id: first-critical-choice
+    title: "첫 번째 중대한 선택"
+    type: choice
+    intro:
+      text: |-
+        스쿨존에서 교통사고가 발생했다.
+
+        어린아이가 크게 다쳤고, 가해자는 60대 여성 운전자.
+
+        언론은 분노하고 있다.
+        여론은 말한다:
+        "스쿨존 사고는 무조건 징역형이다!"
+
+        법리적으로는 고의가 없었고, 사망도 아닌 부상.
+        하지만 아이 부모는 울부짖는다.
+
+        이제 당신은 결정을 내려야 한다.
+      image_prompt: "school zone accident scene, injured child, elderly female driver, angry crowd, news reporters, presidential office meeting"
+    choices:
+      - id: follow-public-opinion
+        text: "여론에 따라 가해자를 강력히 처벌한다"
+        result: "국민들은 환호했지만, 법조계는 우려를 표했다. '감정적 판단이 법치주의를 흔든다'는 비판이 일었다."
+        nextNodeId: ending-prison
+      - id: follow-law
+        text: "법리에 따라 적정한 처벌을 유지한다"
+        result: "법조계는 지지했지만, 국민들은 분노했다. '대통령이 가해자 편을 든다'는 여론이 들끓었다."
+        nextNodeId: ending-no-prison
+      - id: find-middle-ground
+        text: "제3의 길을 모색한다 - 스쿨존 안전 강화 정책을 발표한다"
+        result: "정책적 해결책을 제시했지만, 양쪽 모두 불만을 표했다. '회피한다'는 비판과 '현실적'이라는 평가가 엇갈렸다."
+        nextNodeId: ending-no-prison
+- id: ending-prison
+  type: scenarioNode
+  data:
+    id: ending-prison
+    title: "감옥에 보낸다"
+    type: ending
+    intro:
+      text: |-
+        감옥에 간 여성은 인터뷰를 통해 말한다.
+
+        "평생 법을 지키며 살아왔는데, 그날은 브레이크가 말을 듣지 않았어요…"
+
+        그녀의 가족은 슬퍼했고, 여론은 며칠 만에 관심을 잃었다.
+
+        당신은 조용히 혼잣말을 한다.
+
+        "정의란, 항상 대중의 감정과 같은 방향일까?"
+      image_prompt: "elderly woman in prison uniform giving interview, sad family members, fading news coverage, president alone in office contemplating"
+    choices: []
+- id: ending-no-prison
+  type: scenarioNode
+  data:
+    id: ending-no-prison
+    title: "감옥에 보내지 않는다"
+    type: ending
+    intro:
+      text: |-
+        며칠 뒤, 또 다른 스쿨존에서 사고가 발생했다.
+
+        "대통령이 봐줬기 때문에 법이 무너졌다"는 비난이 쏟아졌다.
+
+        당신의 지지율은 폭락했고, 국회는 탄핵을 논의하기 시작했다.
+
+        당신은 고개를 숙였다.
+        "그날 새벽, 나는 신호등을 기다렸었지…"
+
+        그리고, 혼잣말로 중얼거린다.
+        "법이란, 규칙이란... 결국 누굴 위한 것일까?"
+      image_prompt: "another school zone accident, angry protesters, falling approval ratings on TV, president bowing head, flashback to teenage crosswalk scene"
+    choices: []
