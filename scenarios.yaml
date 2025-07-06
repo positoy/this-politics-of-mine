@@ -45,6 +45,7 @@
 
         👑 대통령이 된 당신. 이젠 수많은 선택의 책임이 따라온다.
       image_prompt: "ordinary office worker helping elderly woman on bus, viral moment, news cameras, presidential inauguration ceremony"
+      image_generated: false
     choices: []
 - id: first-critical-choice
   type: scenarioNode
