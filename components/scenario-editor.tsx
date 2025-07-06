@@ -23,6 +23,7 @@ const nodeTypes: NodeTypes = {
       {...props}
       onEdit={props.data.onEdit}
       onPlay={props.data.onPlay}
+      onDelete={props.data.onDelete}
     />
   ),
 };
@@ -102,6 +103,13 @@ export function ScenarioEditor({
     [setNodes]
   );
 
+  const handleNodeDelete = useCallback(
+    (nodeId: string) => {
+      setNodes((nds) => nds.filter((node) => node.id !== nodeId));
+    },
+    [setNodes]
+  );
+
   const addNewNode = useCallback(() => {
     const newNode: Node = {
       id: `node-${Date.now()}`,
@@ -127,6 +135,7 @@ export function ScenarioEditor({
       ...node.data,
       onEdit: handleNodeEdit,
       onPlay: handleNodePlay,
+      onDelete: handleNodeDelete,
     },
     selected: node.id === selectedNodeId,
   }));
