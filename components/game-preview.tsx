@@ -32,12 +32,22 @@ export function GamePreview({
   const isEndingNode = selectedNode.data?.type === "ending";
 
   // RPG 스타일 레이아웃
+  // 배경 이미지 경로 결정
+  let bgImageUrl = undefined;
+  console.log("selectedNode.id", selectedNode.id);
+  console.log("selectedNode.image_generated", selectedNode.image_generated);
+  if (selectedNode.intro.image_generated === true) {
+    bgImageUrl = `/resources/${selectedNode.id}.jpg`;
+  } else if (selectedNode.intro.image_url) {
+    bgImageUrl = selectedNode.intro.image_url;
+  }
+
   return (
     <div className="relative w-full h-full bg-black overflow-hidden rounded-lg shadow-lg">
       {/* 배경 이미지 */}
-      {selectedNode.intro.image_url ? (
+      {bgImageUrl ? (
         <img
-          src={selectedNode.intro.image_url}
+          src={bgImageUrl}
           alt={selectedNode.title}
           className="absolute inset-0 w-full h-full object-cover object-center opacity-90"
         />

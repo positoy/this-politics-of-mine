@@ -8,7 +8,8 @@
     title: "규칙이란 무엇인가?"
     intro:
       text: "새벽 2시, 차가 없는 횡단보도 앞. 친구는 무단횡단을 하자고 한다."
-      image_prompt: "empty crosswalk at night, red traffic light, two middle school students waiting, urban street in silence"
+      image_prompt: "a Korean middle school student wearing a school uniform, seen from behind, standing still at night under a red traffic light, facing a wide crosswalk composed of multiple horizontal stripes, cinematic top-down composition, deep darkness surrounding the scene, illuminated only by traffic signal and streetlights, pixel art style, 16-bit retro game aesthetic, quiet urban street, isolated and contemplative atmosphere"
+      image_generated: true
     choices:
       - id: wait
         text: "신호가 바뀔 때까지 기다린다"
